@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Paragraph Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 20px;
+            min-height: 24px; 
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Update Paragraph</h1>
+        <p id="displayText">This is a sample paragraph.</p>
+        <input type="text" id="userInput" placeholder="Enter new text here">
+        <br>
+        <button id="btn">Update Text</button>
+    </div>
+
+    <script>
+        const inputField = document.getElementById('userInput');
+        const paragraph = document.getElementById('displayText');
+        const button = document.getElementById('Btn');
+        button.addEventListener('click', function() {
+            const userText = inputField.value.trim();
+            if(userText) {
+                paragraph.textContent = userText;
+                inputField.value = ''; 
+            } else {
+                alert('Please enter some text!');
+            }
+        });
+    </script>
+
+</body>
+</html>
